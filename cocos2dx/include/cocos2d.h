@@ -207,6 +207,15 @@ THE SOFTWARE.
     #include "platform/emscripten/CCStdC.h"
 #endif // CC_TARGET_PLATFORM == CC_PLATFORM_EMSCRIPTEN
 
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_RASPBERRYPI)
+	#include "platform/raspberrypi/CCAccelerometer.h"
+	#include "platform/raspberrypi/CCApplication.h"
+	#include "platform/raspberrypi/CCEGLView.h"
+	#include "platform/raspberrypi/CCGL.h"
+	#include "platform/raspberrypi/CCStdC.h"
+#endif // CC_TARGET_PLATFORM == CC_PLATFORM_RASPBERRY
+
 // script_support
 #include "script_support/CCScriptSupport.h"
 
