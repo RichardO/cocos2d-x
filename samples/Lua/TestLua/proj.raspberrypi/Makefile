@@ -8,6 +8,8 @@ INCLUDES =  -I../ -I../Classes -I$(COCOS_ROOT)/CocosDenshion/include \
 
 SOURCES = main.cpp ../Classes/AppDelegate.cpp
 
+include $(COCOS_ROOT)/cocos2dx/proj.raspberrypi/cocos2dx.mk
+
 SHAREDLIBS += -lcocos2d -lcocosdenshion -llua
 COCOS_LIBS = $(LIB_DIR)/libcocos2d.so $(LIB_DIR)/libcocosdenshion.so $(LIB_DIR)/liblua.so
 
@@ -20,7 +22,7 @@ else
 DEFINES += -DDISABLE_VORBIS
 endif
 
-include $(COCOS_ROOT)/cocos2dx/proj.raspberrypi/cocos2dx.mk
+STATICLIBS += $(STATICLIBS_DIR)/libcurl.a 
 
 $(TARGET): $(OBJECTS) $(STATICLIBS) $(COCOS_LIBS) $(CORE_MAKEFILE_LIST)
 	@mkdir -p $(@D)
